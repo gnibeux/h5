@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>推广</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<link href='css/coupon.css' rel="stylesheet" />
+	<script type='text/javascript' src='js/vue.js'></script>
+	<script type='text/javascript' src='js/vue-resource.min.js'></script>
+
+</head>
+
+<body>
+	<div class="center">
+		<img class="pipe" src="img/redBlock2.png"/>
+		<label id="info">{{info}}</label>
+
+		<img class="tip" src="img/download.png"/>
+		
+		<div class="download">
+			<div class="android">
+				<a href="http://fir.im/mqnk"><img src="img/android.png"></a>
+				<label>Android</label>
+			</div>
+			<div class="ios">
+				<a href="http://fir.im/mqnk"><img src="img/ios.png"></a>
+				<label>ios</label>
+			</div>
+		</div>
+
+	</div>
+
+<script>
+	var vm = new Vue({
+		el:".center",
+		data:{
+			info:""
+		},
+		mounted: function(){
+			var getInfo = localStorage.code;
+			// debugger;
+			if(getInfo == 0){
+				this.info = "补血成功，入您账中";
+			}else{
+				this.info = "血条已满，多补无益";
+			}
+
+			//超出1000次
+			//	this.info = "十分遗憾，血槽已空";
+		}
+	})
+	
+</script>
+</body>
+
+</html>

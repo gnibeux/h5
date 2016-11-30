@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>推广</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<link href='css/coupon.css' rel="stylesheet" />
+	<script type='text/javascript' src='js/vue.js'></script>
+	<script type='text/javascript' src='js/vue-resource.min.js'></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+
+</head>
+
+<body>
+<div id="app">
+	<div class="infusion">
+		<div class="big">
+			<img class="bubbles" src="img/bubbles.png"/>
+			<img class="bottle" src="img/bigInfusionBackground.png">
+			<img class="tag" src="img/bigInfusionTag.png"/>
+		</div>	
+		<img class="smalls" src="img/infusions.png">
+	</div>
+		
+	<div class="title">
+		<img class="subject" src="img/titile.png">
+		<img class="bigStar" src="img/bigPlus.png">
+		<img class="smallStar" src="img/smallPlus.png">
+	</div>
+
+	<div class="form">
+		<img class="pipe" src="img/pipe3.png"/>
+		<input type='tel' id='phonenum' placeholder="请输入手机号" v-on:input='testTel' v-on:propertychange='testTel' v-model="phone"/>
+		<button type='button' id="second" v-on:click='sendMessage' :disabled="disableSecond" v-show="showCode">戳我领密令</button>
+		<input type='number' id="code" placeholder="输入密令"   v-on:input='testCode' v-on:propertychange='testCode' v-show="!showCode" v-model="code"/>
+		<label id="countdown" v-show="!showCode">60s</label>
+	</div>
+</div>
+
+<script type='text/javascript' src='js/coupon.js'></script>
+
+</body>
+
+</html>
